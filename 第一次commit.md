@@ -2,7 +2,8 @@
 
 ## 1.git clone数据
 
-打开git bash输入git clone  https://github.com/zhaoxizxzx/dataset,会成功将数据克隆到dataset文件夹中
+打开git bash输入git clone  https://github.com/zhaoxizxzx/dataset
+会成功将数据克隆到dataset文件夹中
 
 ![](https://img2022.cnblogs.com/blog/2724887/202201/2724887-20220121233059706-262160140.png)
 
