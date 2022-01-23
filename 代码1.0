@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	FILE *fp;
+	FILE *fq;
+	fp=fopen("packet1.txt","r");
+	fq=fopen("测试2.1.txt","r");
+long int oip1[10000],pip1[10000];
+int opo1[10000],ppo1[10000];
+int oip3[1000][1000];
+int pip3[1000][1000];
+int ht1[10000];
+int i=0;
+int w[10000]
+int oip2[1000][1000];
+int pip2[1000][1000];
+
+while(5==fscanf(fp,"%d %d %d %d %d",&oip1[i],&pip1[i],&opo1[i],&ppo1[i],&ht1[i]))
+{
+	while(oip1[i]!=0)
+{
+	b[i]=oip1[i]%16+oip1[i]/16;
+}
+for(j=i-1;j>=1;j=j-2)
+{
+	c=b[j]*16+b[j-1]*1;
+	printf("%d",c);
+}
+	i++;
+}
+i=0;j=0;
+while(10==fscanf(fq,"@%d.%d.%d.%d/%d %d.%d.%d.%d/%d\n",&oip2[i][j],&oip2[i][j+1],&oip2[i][j+2],&oip2[i][j+3],&w1[i],&pip2[i][j],&pip2[i][j+1],&pip2[i][j+2],&pip2[i][j+3],&w2[i])
+{
+	i++;
+	j+=4;
+}   
+fclose(fp);
+   
+return 0;}
