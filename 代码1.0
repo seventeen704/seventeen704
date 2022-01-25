@@ -36,6 +36,29 @@ while(10==fscanf(fq,"@%d.%d.%d.%d/%d %d.%d.%d.%d/%d\n",&oip2[i][j],&oip2[i][j+1]
 	i++;
 	j+=4;
 }   
+////判断端口是否匹配
+//#include <stdio.h>
+//
+//int main()
+//{
+//	int a,b;//规则集的源端口范围
+//	int c,d;//规则集的目的端口范围
+//	int e,f;//数据集的源、目的端口
+//	scanf("%d %d",&a,&b);
+//	scanf("%d %d",&c,&d);
+//	scanf("%d %d",&e,&f);
+//	
+//	if(e>=a && e<=b)
+//	{
+//		if(f>=c && f<=d)
+//		printf("YES");
+//		else
+//		printf("NO");
+//	}
+//	else
+//	printf("NO");
+//	return 0;
+//}
 fclose(fp);
    
 return 0;}
