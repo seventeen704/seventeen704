@@ -3,62 +3,77 @@
 
 int main()
 {
-	FILE *fp;
-	FILE *fq;
-	fp=fopen("packet1.txt","r");
-	fq=fopen("测试2.1.txt","r");
-long int oip1[10000],pip1[10000];
-int opo1[10000],ppo1[10000];
-int oip3[1000][1000];
-int pip3[1000][1000];
-int ht1[10000];
-int i=0;
-int w[10000]
-int oip2[1000][1000];
-int pip2[1000][1000];
+	//数据集变量
+	int oip1[10000],moip1[10000][10];
+	int b[100],c[100];//储存变量
+	int d[10000];//序号
+	int pip1[10000],mpip1[10000][10];
+	int opo1[10000],ppo[10000];
+	int h1[10000];
+	//规则集变量
+	int moip2[10000][10];
+	int mpip2[10000][10];
+	int w1[10000],w2[10000];
+	int opo2[10000],opo3[10000];
+	int h2[10000],h3[10000];
+	int i=0;
+	int m;
+	int n;
+	int a,f;
+	
+	FILE * fp;
+	FILE * fq;
 
-while(5==fscanf(fp,"%d %d %d %d %d",&oip1[i],&pip1[i],&opo1[i],&ppo1[i],&ht1[i]))
-{
-	while(oip1[i]!=0)
-{
-	b[i]=oip1[i]%16+oip1[i]/16;
-}
-for(j=i-1;j>=1;j=j-2)
-{
-	c=b[j]*16+b[j-1]*1;
-	printf("%d",c);
-}
-	i++;
-}
-i=0;j=0;
-while(10==fscanf(fq,"@%d.%d.%d.%d/%d %d.%d.%d.%d/%d\n",&oip2[i][j],&oip2[i][j+1],&oip2[i][j+2],&oip2[i][j+3],&w1[i],&pip2[i][j],&pip2[i][j+1],&pip2[i][j+2],&pip2[i][j+3],&w2[i])
-{
-	i++;
-	j+=4;
-}   
-////判断端口是否匹配
-//#include <stdio.h>
-//
-//int main()
-//{
-//	int a,b;//规则集的源端口范围
-//	int c,d;//规则集的目的端口范围
-//	int e,f;//数据集的源、目的端口
-//	scanf("%d %d",&a,&b);
-//	scanf("%d %d",&c,&d);
-//	scanf("%d %d",&e,&f);
-//	
-//	if(e>=a && e<=b)
-//	{
-//		if(f>=c && f<=d)
-//		printf("YES");
-//		else
-//		printf("NO");
-//	}
-//	else
-//	printf("NO");
-//	return 0;
-//}
-fclose(fp);
+	fp = fopen ("packet1.txt", "r");
+	fq = fopen ("rule1.txt","r");
+	//转换IP地址
+	while(5==fscanf(fp, "%d %d %d %d %d", &opi1[i],&pip1[i],&opo1[i],&ppo1[i],&h1[i]))
+	{
+		int j=0;
+		while(opi1[i]!=0 || pip1[i]!=0 )
+		{  
+			b[j]=opi1[i]%16;
+			c[j]=pip1[i]%16;
+			opi1[i]=opi1[i]/16;
+			pip1[i]=pip1[i]/16;
+			j++;
+		}
+		d[i]=i;n=0;
+		for(m=j-1;m>=1;m=m-2)
+		{
+			moip1[i][n]=b[m]*16+b[m-1]*1;
+			mpip1[i][n]=c[m]*16+c[m-1]*1;
+			n++;
+		}
+		i++;
+	}
+	i=0;
+	while(16 == fscanf(fq,"@%d.%d.%d.%d/%d %d.%d.%d.%d/%d %d : %d %d : %d %x/%x\n",&moip2[i][0],&moip2[i][1],&moip2[i][2],&moip2[i][3],&w1[i],&mpip2[i][0],&mpip2[i][1],&mpip2[i][2],&mpip2[i][3],&w2[i],&opo2[i],&opo3[i],&ppo2[i],&ppo3[i],&h2[i],&h3[i]))
+	{
+		i++;
+	}
+	a=i-1;
+	//开始比对源IP地址
+	for(i=0;;i++)
+	{
+		for(j=0;j<=a;j++)
+		{
+			for(k=0;k<=3;k++)
+			{
+				if(moip1[i][k]!=mpip[j][k])
+				{
+					break;
+				}
+				else//比对目的IP地址
+				{
+						
+				}
+			}
+		}
+	}
    
-return 0;}
+	fclose(fp);
+	fclose(fq);
+	
+	return 0;
+}
