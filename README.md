@@ -1,16 +1,7 @@
 ### Hi there 👋
-
-<!--
-**seventeen704/seventeen704** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on Fuzhou University.
-- 🌱 I’m currently learning Information Security.
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: seventeen
-- ⚡ Fun fact: hhh
--->
+运行环境：Dev-C++ 6.3
+要将需要匹配的文件与代码放在同一个文件夹内，
+在下列代码中添加文件名
+	    fp = fopen (".txt", "r");//数据集
+	    fq = fopen (".txt","r");//规则集
+	    fo = fopen (".txt","w");//输出结果
